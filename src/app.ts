@@ -6,14 +6,14 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  return res.send('Hello world!');
+  res.send('Hello world!');
 });
 
 const apiRouter = Router();
 app.use('/api', apiRouter);
 
 const userRouter = new UserRouter();
-apiRouter.use('/users', userRouter.router);
+apiRouter.use( userRouter.router);
 
 if (NODE_ENV !== 'production') {
   app.listen(PORT, () => {
