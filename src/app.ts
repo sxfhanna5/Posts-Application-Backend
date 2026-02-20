@@ -1,9 +1,11 @@
 import express, { Router } from 'express';
 import { NODE_ENV, PORT } from './config';
 import { UserRouter } from './features/users/user.router';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello world!');
