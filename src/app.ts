@@ -13,7 +13,23 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-  res.json({ message: 'API is running' });
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>API Status</title>
+        <style>
+          body { background: #fff; color: #222; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+          .msg { font-size: 2rem; font-family: sans-serif; }
+        </style>
+      </head>
+      <body>
+        <div class="msg">API is running 🚀</div>
+      </body>
+    </html>
+  `);
 });
 
 
