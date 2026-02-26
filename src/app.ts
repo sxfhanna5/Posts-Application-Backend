@@ -16,15 +16,15 @@ app.get('/', (req, res) => {
   res.send('Hello world!');
 });
 
-const apiRouter = Router();
-app.use('/api', apiRouter);
+// API routes mounted directly on the app (no '/api' prefix)
+// previously we used an intermediate router under '/api', which required
+// the frontend to prepend '/api' to every request. Simplifying keeps the
+// contract closer to the workshop description.
 
 const postService = new PostService();
-
 const postController = new PostController(postService);
-
 const postRouter = new PostRouter(postController);
-apiRouter.use(postRouter.router);
+app.use(postRouter.router);
 
 app.use(errorMiddleware);
 
