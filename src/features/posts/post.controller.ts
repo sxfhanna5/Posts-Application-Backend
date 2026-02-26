@@ -16,13 +16,13 @@ export class PostController {
   createPost = (req: Request, res: Response) => {
     const { imageUrl, title, description } = req.body;
 
-    if (imageUrl === undefined || imageUrl === '') {
+    if (!imageUrl) {
       throw Boom.badRequest('imageUrl is required');
     }
-    if (title === undefined || title === '') {
+    if (!title) {
       throw Boom.badRequest('title is required');
     }
-    if (description === undefined || description === '') {
+    if (!description) {
       throw Boom.badRequest('description is required');
     }
 

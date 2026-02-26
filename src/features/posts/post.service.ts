@@ -1,5 +1,5 @@
 import { CreatePostDTO, Post } from './post.types';
-import  Boom  from '@hapi/boom';
+import Boom from '@hapi/boom';
 
 export class PostService {
   private posts: Post[];
