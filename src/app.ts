@@ -13,15 +13,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-  res.json({
-    message: 'API is running',
-    endpoints: ['/posts', '/posts/:id'],
-    sampleResponse: {
-      posts: [
-        { id: 1, title: 'Sample Post', content: 'This is a sample.' }
-      ]
-    }
-  });
+  res.json({ message: 'API is running' });
 });
 
 
