@@ -19,14 +19,14 @@ app.get('/', (req, res) => {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>API Status</title>
+        <title>Backend Post Application</title>
         <style>
           body { background: #fff; color: #222; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
           .msg { font-size: 2rem; font-family: sans-serif; }
         </style>
       </head>
       <body>
-        <div class="msg">API is running 🚀</div>
+        <div class="msg">Backend Post Application is running</div>
       </body>
     </html>
   `);
